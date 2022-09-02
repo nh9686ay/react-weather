@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+
 const api = {
   key: "8e196527d9264816aa9235135220109",
   base: "http://api.weatherapi.com/v1",
 };
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
+
   const dateBuilder = (d) => {
     let months = [
       "January",
