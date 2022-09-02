@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const api = {
-  key: "8e196527d9264816aa9235135220109",
-  base: "http://api.weatherapi.com/v1",
+  key: "6fccde88e004f2541a6e39b8c3a7d94e",
+  base: "https://api.openweathermap.org/data/2.5/",
 };
 
 function App() {
@@ -58,10 +58,17 @@ function App() {
     <div className="app-warm">
       <main>
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="search..." />
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="search..."
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+          />
         </div>
         <div className="location-box">
-          <div className="location">New York City</div>
+          <div className="location">{weather.name},</div>
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">
